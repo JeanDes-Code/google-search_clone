@@ -121,6 +121,6 @@ export const Results = () => {
       );
 
     default:
-      return 'Erreur !';
+      return "Malheureusement, l'Api utilisée pour cette application est obsolète depuis le 29/09/2022. Une Api remplaçante est actuellement à l'étude.";
   }
 };
