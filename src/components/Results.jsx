@@ -25,7 +25,7 @@ export const Results = () => {
 
   switch (location.pathname) {
     case '/search':
-      return (
+      return results ? (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
           {results?.map((item, index) => (
             <div key={index} className="md:w-2/5 w-full">
@@ -47,10 +47,17 @@ export const Results = () => {
             </div>
           ))}
         </div>
+      ) : (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="text-lg font-semibold">
+            Malheureusement, l'Api utilisée pour cette application n'existe
+            plus...
+          </p>
+        </div>
       );
 
     case '/image':
-      return (
+      return results ? (
         <div className="flex flex-wrap justify-center items-center">
           {results?.map((item, index) => (
             <a
@@ -72,10 +79,17 @@ export const Results = () => {
             </a>
           ))}
         </div>
+      ) : (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="text-lg font-semibold">
+            Malheureusement, l'Api utilisée pour cette application n'existe
+            plus...
+          </p>
+        </div>
       );
 
     case '/video':
-      return (
+      return results ? (
         <div className="flex flex-wrap">
           {results?.map((video, index) => (
             <div key={index} className="p-2">
@@ -92,10 +106,17 @@ export const Results = () => {
             </div>
           ))}
         </div>
+      ) : (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="text-lg font-semibold">
+            Malheureusement, l'Api utilisée pour cette application n'existe
+            plus...
+          </p>
+        </div>
       );
 
     case '/news':
-      return (
+      return results ? (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
           {results?.map((item) => (
             <div key={item?.id} className="md:w-2/5 w-full">
@@ -118,9 +139,23 @@ export const Results = () => {
             </div>
           ))}
         </div>
+      ) : (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="text-lg font-semibold">
+            Malheureusement, l'Api utilisée pour cette application n'existe
+            plus...
+          </p>
+        </div>
       );
 
     default:
-      return "Malheureusement, l'Api utilisée pour cette application est obsolète depuis le 29/09/2022. Une Api remplaçante est actuellement à l'étude.";
+      return (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="text-lg font-semibold">
+            Malheureusement, l'Api utilisée pour cette application n'existe
+            plus...
+          </p>
+        </div>
+      );
   }
 };
